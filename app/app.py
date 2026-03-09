@@ -1,9 +1,5 @@
 """
-Flask application demonstrating transitive dependency vulnerability.
 
-This app DOES NOT import jinja2 directly - it only imports Flask.
-Jinja2 is a transitive dependency through Flask.
-The vulnerability is in the |xmlattr filter used in the template.
 """
 
 from flask import Flask, render_template, request
@@ -17,9 +13,7 @@ app = Flask(__name__)
 @app.route('/', methods=['GET', 'POST'])
 def index():
     """
-    Main route that accepts user attributes and renders them using xmlattr filter.
-    This demonstrates how a vulnerability in a transitive dependency (Jinja2)
-    can affect the application.
+    .
     """
     user_attrs = {}
     
